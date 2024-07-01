@@ -56,20 +56,20 @@ void loop() {
   digitalWrite(DIR_PIN, LOW); // Mude para LOW para girar no sentido horário
 
   // Gire o motor de passo
-  // for (int i = 0; i < 500; i++) { // 200 passos para uma rotação completa (pode variar)
-  //   digitalWrite(STEP_PIN, HIGH);
-  //   delayMicroseconds(800); // Ajuste este valor conforme necessário para a velocidade desejada
-  //   digitalWrite(STEP_PIN, LOW);
-  //   delayMicroseconds(800); // Ajuste este valor conforme necessário para a velocidade desejada
-  // }
+   for (int i = 0; i < 500; i++) { // 200 passos para uma rotação completa (pode variar)
+     digitalWrite(STEP_PIN, HIGH);
+     delayMicroseconds(800); // Ajuste este valor conforme necessário para a velocidade desejada
+     digitalWrite(STEP_PIN, LOW);
+     delayMicroseconds(800); // Ajuste este valor conforme necessário para a velocidade desejada
+  }
 
- // delay(1000);
+  delay(1000);
 
   rotate(5*4096 + (4096 / 3) *2);
   // Parar por 5 segundos
   // delay(5000); // 5000 milissegundos = 5 segundos
 
-  delay(5000); // Aguarde um segundo antes de inverter a direção
+  delay(1000); // Aguarde um segundo antes de inverter a direção
 
   // Inverte a direção do motor
   // digitalWrite(DIR_PIN, LOW); // Mude para HIGH para girar no sentido anti-horário
