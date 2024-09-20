@@ -4,6 +4,10 @@
 
 This repository contains the development of a 3D Scanner system aimed at determining the most effective methodology for calculating the volume of objects. The system uses an infrared sensor to capture distances between the sensor and the object, generating a point cloud that represents the object's surface. The proposed volume calculation methodologies are based on algorithms and geometric computations derived from the collected data.
 
+If you want to know more about this project:
+- [Paper](https://github.com/Gupadovam/Scanner-3D/blob/main/ELEX20_Equipe09_Artigo_Scanner3D.pdf) 
+- [Video](https://link_to_your_video) 
+
 ## Features
 
 - **Data Acquisition**: Uses an infrared sensor to collect distance measurements.
