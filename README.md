@@ -47,3 +47,9 @@ To use this system:
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/3d-scanner-system.git
+
+## Authors
+
+* **Gabriel Picinato** - [Github](https://github.com/gabpicinato)
+* **Gustavo Chemin** - [Github](https://github.com/guchemin)
+* **Gustavo Padovam** - [Github](https://github.com/Gupadovam)
