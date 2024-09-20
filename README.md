@@ -6,7 +6,7 @@ This repository contains the development of a 3D Scanner system aimed at determi
 
 If you want to know more about this project:
 - [Paper](https://github.com/Gupadovam/Scanner-3D/blob/main/ELEX20_Equipe09_Artigo_Scanner3D.pdf) 
-- [Video](https://link_to_your_video) 
+- [Video](https://youtu.be/MQOffw7QOr4?si=3pNad5703mgbvbWD) 
 
 ## Features
 
