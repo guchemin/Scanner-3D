@@ -53,7 +53,7 @@ def salver(pontos):
         # Tenta salvar a nuvem de pontos em um arquivo PLY
         try:
             o3d.io.write_point_cloud("nuvem_de_pontos_final.ply", point_cloud)
-            print("Nuvem de pontos salva com sucesso em 'nuvem_de_pontos_final_1.ply'.")
+            print("Nuvem de pontos salva com sucesso em 'nuvem_de_pontos_final.ply'.")
         except Exception as e:
             print(f"Erro ao salvar a nuvem de pontos: {e}")
 

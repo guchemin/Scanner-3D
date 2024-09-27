@@ -21,7 +21,7 @@ def colorize_point_cloud(point_cloud):
     point_cloud.colors = o3d.utility.Vector3dVector(colors)
 
     return point_cloud
-def close_open_slices(point_cloud, threshold, num_interpolation_points= 3):
+def interpolation(point_cloud, threshold, num_interpolation_points= 3):
     points = np.asarray(point_cloud.points)
 
     # Identificar os limites da nuvem de pontos
@@ -88,6 +88,7 @@ def compute_point_cloud_volume(point_cloud, voxel_size):
 # Carregar a nuvem de pontos
 point_cloud = o3d.io.read_point_cloud("nuvem_de_pontos_final.ply")
 
+
 # Remoção de outliers
 cl, ind = point_cloud.remove_statistical_outlier(nb_neighbors=20, std_ratio=2.0)
 filtered_cloud = point_cloud.select_by_index(ind)
@@ -95,25 +96,21 @@ filtered_cloud = point_cloud.select_by_index(ind)
 # Suavização da nuvem de pontos usando filtro de média móvel
 smoothed_cloud = moving_average_filter(filtered_cloud, size=10)
 
-# Visualizar a nuvem de pontos suavizada
-# o3d.visualization.draw_geometries([smoothed_cloud], point_show_normal=True)
-
 # Fechar as extremidades abertas
-closed_cloud = close_open_slices(smoothed_cloud, threshold=3)
-
-# Visualizar a nuvem de pontos fechada
-# o3d.visualization.draw_geometries([closed_cloud], point_show_normal=True)
+closed_cloud = interpolation(smoothed_cloud, threshold=3)
 
 # Colorir a nuvem de pontos com base nas coordenadas X e Y
 colored_cloud = colorize_point_cloud(closed_cloud)
 
 # Visualizar a nuvem de pontos colorida
+# o3d.visualization.draw_geometries([point_cloud], point_show_normal=True)
+o3d.visualization.draw_geometries([point_cloud], point_show_normal=True)
 o3d.visualization.draw_geometries([colored_cloud], point_show_normal=True)
 
 
-
-
-voxel_size = 1.65  # Ajustar o tamanho do voxel conforme necessário
+voxel_size = 1.55  # Ajustar o tamanho do voxel conforme necessário
 volume = compute_point_cloud_volume(colored_cloud, voxel_size)
 
 print(f"Volume estimado da nuvem de pontos: {volume}")
+with open('volume_nuvem.txt', 'w') as file:
+    file.write(str(volume))
