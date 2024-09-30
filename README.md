@@ -48,7 +48,7 @@ To use this system:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Gupadovam/Scanner-3D.git
+   git clone https://github.com/guchemin/Scanner-3D.git
 
 ## Authors
 
